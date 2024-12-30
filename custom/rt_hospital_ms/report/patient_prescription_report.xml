@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="patient_prescription_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <h2>Medicine Prescription</h2><br/>
+                    <div class="page">
+                        <span>PRESCRIPTION # &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:  <t t-esc="doc.prescription_seq"/></span><br/><br/>
+                        <span>PATIENT # &#160;&#160;&#160;&#160;&#160;&#160;:  <t t-esc="doc.patient_id.patient_seq"/></span><br/>
+                        <span>PATIENT Contact &#160;&#160;&#160;&#160;&#160;&#160;:  <t t-esc="doc.patient_id.phone"/></span><br/><br/>
+                        <span>PRESCRIBED BY  &#160; &#160; &#160;:  <t t-esc="doc.doctor_id.name"/></span><br/>
+                        <span>Doctors's Contact  &#160; &#160; &#160;:  <t t-esc="doc.doctor_id.mobile_phone"/></span><br/>
+                        <span>Hospital/Medical Centre  &#160; &#160; &#160;:  <t t-esc="doc.doctor_id.address_id.name"/></span><br/><br/>
+                        <span>DATE :&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:<t t-esc="doc.prescription_date"/></span><br/><br/>
+<!--                        <t t-esc="doc.name"/>-->
+                        <table class="table table">
+                            <thead>
+                                <tr>
+                                    <th class="text-left">Drug</th>
+                                    <th class="text-left">Duration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="doc.prescription_ids" t-as="prescription" scope="row">
+                                    <td name="td_option_name">
+                                        <span t-field="prescription.medicine_id.medicine"/>
+                                    </td>
+                                    <td name="td_option_name">
+                                        <span t-field="prescription.days"/> &#160; Days
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+<!--                        <h5>Recommended Work</h5>-->
+<!--                        <span><t t-esc="doc.description"/></span>-->
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="patient_prescription_report_action" model="ir.actions.report">
+        <field name="name">Prescription Report</field>
+        <field name="model">hospital.prescription</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">rt_hospital_ms.patient_prescription_template</field>
+        <field name="report_file">rt_hospital_ms.patient_prescription_template</field>
+        <field name="print_report_name">"Medicine Prescription"</field>
+        <field name="binding_model_id" ref="rt_hospital_ms.model_hospital_prescription"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

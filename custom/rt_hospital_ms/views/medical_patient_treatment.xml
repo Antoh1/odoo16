@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_patient_disease_form_view" model="ir.ui.view">
+        <field name="name">medical.patient.disease.form.view</field>
+        <field name="model">medical.patient.disease</field>
+        <field name="arch" type="xml">
+            <form string="Treatments">
+                <sheet>
+                    <group colspan="4" col="4" string="Treatment">
+                        <field name="pathology_id" />
+                        <field name="doctor_id" />
+                        <field name="patient_id" />
+                        <field name="appointment_id"/>
+                        <field name="disease_severity" />
+                        <field name="status" />
+                        <field name="is_infectious" />
+                        <field name="is_active" />
+                        <field name="short_comment" />
+                        <field name="diagnosis_date" />
+                        <field name="healed_date" />
+                        <field name="age" />
+                        <field name="currency_id" invisible="1"/>
+                        <field name="treatment_charge" />
+                    </group>
+                    <group colspan="4" col="4" string="Allergies">
+                        <field name="is_allergic" />
+                        <field name="allergy_type" attrs="{'invisible': [('is_allergic','=', False)]}"/>
+                    </group>
+                    <group colspan="4" col="4" string="Pregnancy">
+                        <field name="pregnancy_warning" />
+                        <field name="week_of_pregnancy" attrs="{'invisible': [('pregnancy_warning','=', False)]}"/>
+                    </group>
+                    <group colspan="4" col="4" string="Therapy">
+                        <field name="is_on_treatment" />
+                        <field name="treatment_description" attrs="{'invisible': [('is_on_treatment','=', False)]}"/>
+                        <field name="date_start_treatment" attrs="{'invisible': [('is_on_treatment','=', False)]}"/>
+                        <field name="date_stop_treatment" attrs="{'invisible': [('is_on_treatment','=', False)]}"/>
+                    </group>
+                    <group string="Extra Info">
+                        <field name="extra_info" nolabel="1" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_patient_disease_tree_view" model="ir.ui.view">
+        <field name="name">medical.patient.disease.tree.view</field>
+        <field name="model">medical.patient.disease</field>
+        <field name="arch" type="xml">
+            <tree string="Treatments">
+                <field name="patient_id" />
+                <field name="doctor_id" />
+                <field name="pathology_id" />
+                <field name="status" />
+                <field name="is_active" />
+                <field name="is_infectious" />
+                <field name="disease_severity" />
+                <field name="pregnancy_warning" />
+                <field name="diagnosis_date" />
+                <field name="date_stop_treatment" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_medical_patient_treatment" model="ir.actions.act_window">
+        <field name="name">Treatments</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.patient.disease</field>
+        <field name="binding_view_types">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Treatments"
+              id="hospital_treatments"
+              parent="hospital_patient_root"
+              action="action_medical_patient_treatment"
+              sequence="9"/>
+</odoo>

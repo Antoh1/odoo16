@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Dental Categories -->
+        <record id="dental_cat_general" model="dental.service">
+            <field name="name">General Dentistry</field>
+        </record>
+        <record id="dental_cat_prevent" model="dental.service">
+            <field name="name">Preventive Services</field>
+        </record>
+        <record id="dental_cat_restore" model="dental.service">
+            <field name="name">Restorative Dentistry</field>
+        </record>
+        <record id="dental_cat_cosmetic" model="dental.service">
+            <field name="name">Cosmetic Dentistry</field>
+        </record>
+        <record id="dental_cat_ortho" model="dental.service">
+            <field name="name">Orthodontics</field>
+        </record>
+        <record id="dental_cat_period" model="dental.service">
+            <field name="name">Periodontics</field>
+        </record>
+        <record id="dental_cat_endod" model="dental.service">
+            <field name="name">Endodontics</field>
+        </record>
+        <record id="dental_cat_oral" model="dental.service">
+            <field name="name">Oral Surgery</field>
+        </record>
+        <record id="dental_cat_pediar" model="dental.service">
+            <field name="name">Pediatric Dentistry</field>
+        </record>
+        <record id="dental_cat_emergency" model="dental.service">
+            <field name="name">Emergency Services</field>
+        </record>
+        <record id="dental_cat_sedat" model="dental.service">
+            <field name="name">Sedation Dentistry</field>
+        </record>
+        <record id="dental_cat_add" model="dental.service">
+            <field name="name">Additional Services</field>
+        </record>
+
+        <!--   Dental Services     -->
+        <record id="dental_service_reg" model="dental.sub.service">
+            <field name="name">Routine Check-ups</field>
+            <field name="description">Regular dental examinations</field>
+            <field name="service_category" ref="dental_cat_general"/>
+        </record>
+        <record id="dental_service_clean" model="dental.sub.service">
+            <field name="name">Teeth Cleaning</field>
+            <field name="description">Professional dental cleanings to remove plaque and tartar</field>
+            <field name="service_category" ref="dental_cat_general"/>
+        </record>
+        <record id="dental_service_xr" model="dental.sub.service">
+            <field name="name">X-rays</field>
+            <field name="description">Diagnostic imaging to identify issues not visible during exams</field>
+            <field name="service_category" ref="dental_cat_general"/>
+        </record>
+        <record id="dental_service_oralcan" model="dental.sub.service">
+            <field name="name">Oral Cancer Screenings</field>
+            <field name="description">Assessing for signs of oral cancer</field>
+            <field name="service_category" ref="dental_cat_general"/>
+        </record>
+        <record id="dental_service_fluo" model="dental.sub.service">
+            <field name="name">Fluoride Treatments</field>
+            <field name="description">Application of fluoride to strengthen teeth</field>
+            <field name="service_category" ref="dental_cat_prevent"/>
+        </record>
+        <record id="dental_service_seal" model="dental.sub.service">
+            <field name="name">Sealants</field>
+            <field name="description">Protective coatings applied to the chewing surfaces of back teeth</field>
+            <field name="service_category" ref="dental_cat_prevent"/>
+        </record>
+        <record id="dental_service_edu" model="dental.sub.service">
+            <field name="name">Patient Education</field>
+            <field name="description">Guidance on oral hygiene practices and preventive care</field>
+            <field name="service_category" ref="dental_cat_prevent"/>
+        </record>
+        <record id="dental_service_fill" model="dental.sub.service">
+            <field name="name">Fillings</field>
+            <field name="description">Treatment of cavities with composite, amalgam, or other materials</field>
+            <field name="service_category" ref="dental_cat_restore"/>
+        </record>
+        <record id="dental_service_crown" model="dental.sub.service">
+            <field name="name">Crowns</field>
+            <field name="description">Caps placed over damaged teeth to restore shape and function</field>
+            <field name="service_category" ref="dental_cat_restore"/>
+        </record>
+        <record id="dental_service_bridge" model="dental.sub.service">
+            <field name="name">Bridges</field>
+            <field name="description">Fixed prosthetic devices used to replace missing teeth</field>
+            <field name="service_category" ref="dental_cat_restore"/>
+        </record>
+        <record id="dental_service_denture" model="dental.sub.service">
+            <field name="name">Dentures</field>
+            <field name="description">Complete or partial removable prosthetics for missing teeth</field>
+            <field name="service_category" ref="dental_cat_restore"/>
+        </record>
+        <record id="dental_service_white" model="dental.sub.service">
+            <field name="name">Teeth Whitening</field>
+            <field name="description">Professional whitening treatments for discolored teeth</field>
+            <field name="service_category" ref="dental_cat_cosmetic"/>
+        </record>
+        <record id="dental_service_ven" model="dental.sub.service">
+            <field name="name">Veneers</field>
+            <field name="description">Thin shells placed on the front of teeth for cosmetic improvement</field>
+            <field name="service_category" ref="dental_cat_cosmetic"/>
+        </record>
+        <record id="dental_service_bond" model="dental.sub.service">
+            <field name="name">Bonding</field>
+            <field name="description">Composite resin applied to improve the appearance of teeth</field>
+            <field name="service_category" ref="dental_cat_cosmetic"/>
+        </record>
+        <record id="dental_service_contour" model="dental.sub.service">
+            <field name="name">Gum Contouring</field>
+            <field name="description">Reshaping the gum line for aesthetic purposes</field>
+            <field name="service_category" ref="dental_cat_cosmetic"/>
+        </record>
+        <record id="dental_service_brace" model="dental.sub.service">
+            <field name="name">Braces</field>
+            <field name="description">Traditional metal braces, ceramic braces, or clear aligners</field>
+            <field name="service_category" ref="dental_cat_ortho"/>
+        </record>
+        <record id="dental_service_retain" model="dental.sub.service">
+            <field name="name">Retainers</field>
+            <field name="description">Devices to maintain teeth positions after orthodontic treatment</field>
+            <field name="service_category" ref="dental_cat_ortho"/>
+        </record>
+        <record id="dental_service_gdisease" model="dental.sub.service">
+            <field name="name">Gum Disease Treatment</field>
+            <field name="description">Scaling and root planning for periodontal disease</field>
+            <field name="service_category" ref="dental_cat_period"/>
+        </record>
+        <record id="dental_service_gsurgery" model="dental.sub.service">
+            <field name="name">Gum Surgery</field>
+            <field name="description">Procedures to treat advanced gum disease or aesthetic concerns</field>
+            <field name="service_category" ref="dental_cat_period"/>
+        </record>
+        <record id="dental_service_rcanal" model="dental.sub.service">
+            <field name="name">Root Canals</field>
+            <field name="description">Treatment for infected or damaged tooth pulp</field>
+            <field name="service_category" ref="dental_cat_endod"/>
+        </record>
+        <record id="dental_service_retreat" model="dental.sub.service">
+            <field name="name">Re-Treatment</field>
+            <field name="description">Addressing issues in previously treated root canals</field>
+            <field name="service_category" ref="dental_cat_endod"/>
+        </record>
+        <record id="dental_service_extract" model="dental.sub.service">
+            <field name="name">Tooth Extractions</field>
+            <field name="description">Removal of damaged or problematic teeth</field>
+            <field name="service_category" ref="dental_cat_oral"/>
+        </record>
+        <record id="dental_service_wisdom" model="dental.sub.service">
+            <field name="name">Wisdom Tooth Removal</field>
+            <field name="description">Surgical extraction of wisdom teeth</field>
+            <field name="service_category" ref="dental_cat_oral"/>
+        </record>
+        <record id="dental_service_jaw" model="dental.sub.service">
+            <field name="name">Jaw Surgery</field>
+            <field name="description">Treatment for jaw alignment and related issues</field>
+            <field name="service_category" ref="dental_cat_oral"/>
+        </record>
+        <record id="dental_service_child" model="dental.sub.service">
+            <field name="name">Children’s Check-ups</field>
+            <field name="description">Specialized dental care for children</field>
+            <field name="service_category" ref="dental_cat_pediar"/>
+        </record>
+        <record id="dental_service_sealchild" model="dental.sub.service">
+            <field name="name">Sealants and Fluoride Treatments</field>
+            <field name="description">Preventive care tailored for young patients</field>
+            <field name="service_category" ref="dental_cat_pediar"/>
+        </record>
+        <record id="dental_service_behave" model="dental.sub.service">
+            <field name="name">Behavioral Guidance</field>
+            <field name="description">Strategies for managing dental anxiety in children</field>
+            <field name="service_category" ref="dental_cat_pediar"/>
+        </record>
+        <record id="dental_service_relief" model="dental.sub.service">
+            <field name="name">Toothache Relief</field>
+            <field name="description">Immediate care for dental pain</field>
+            <field name="service_category" ref="dental_cat_emergency"/>
+        </record>
+        <record id="dental_service_trauma" model="dental.sub.service">
+            <field name="name">Dental Trauma</field>
+            <field name="description">Treatment for injuries to teeth or gums</field>
+            <field name="service_category" ref="dental_cat_emergency"/>
+        </record>
+        <record id="dental_service_lost" model="dental.sub.service">
+            <field name="name">Lost Fillings or Crowns</field>
+            <field name="description">Urgent care for lost restorations</field>
+            <field name="service_category" ref="dental_cat_emergency"/>
+        </record>
+        <record id="dental_service_" model="dental.sub.service">
+            <field name="name">Nitrous Oxide (Laughing Gas)</field>
+            <field name="description">Mild sedation for anxiety relief</field>
+            <field name="service_category" ref="dental_cat_sedat"/>
+        </record>
+        <record id="dental_service_" model="dental.sub.service">
+            <field name="name">Oral Sedation</field>
+            <field name="description">Medication to help patients relax during procedures</field>
+            <field name="service_category" ref="dental_cat_sedat"/>
+        </record>
+        <record id="dental_service_" model="dental.sub.service">
+            <field name="name">IV Sedation</field>
+            <field name="description">Deeper sedation for more complex procedures</field>
+            <field name="service_category" ref="dental_cat_sedat"/>
+        </record>
+        <record id="dental_service_" model="dental.sub.service">
+            <field name="name">Teeth Grinding (Bruxism) Solutions</field>
+            <field name="description">Night guards or other treatments</field>
+            <field name="service_category" ref="dental_cat_add"/>
+        </record>
+        <record id="dental_service_" model="dental.sub.service">
+            <field name="name">Custom Mouthguards</field>
+            <field name="description">For sports or teeth protection</field>
+            <field name="service_category" ref="dental_cat_add"/>
+        </record>
+        <record id="dental_service_" model="dental.sub.service">
+            <field name="name">Halitosis Treatment</field>
+            <field name="description">Addressing chronic bad breath</field>
+            <field name="service_category" ref="dental_cat_add"/>
+        </record>
+
+    </data>
+</odoo>

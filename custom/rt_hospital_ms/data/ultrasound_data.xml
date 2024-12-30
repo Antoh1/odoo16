@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Dental Categories -->
+        <record id="ultra_cat_general" model="ultrasound.category">
+            <field name="name">General Ultrasound Services</field>
+        </record>
+        <record id="ultra_cat_obstet" model="ultrasound.category">
+            <field name="name">Obstetric Ultrasound Services</field>
+        </record>
+        <record id="ultra_cat_special" model="ultrasound.category">
+            <field name="name">Specialty Ultrasound Services</field>
+        </record>
+        <record id="ultra_cat_intervention" model="ultrasound.category">
+            <field name="name">Interventional Ultrasound Services</field>
+        </record>
+        <record id="ultra_cat_pediatric" model="ultrasound.category">
+            <field name="name">Pediatric Ultrasound Services</field>
+        </record>
+        <record id="ultra_cat_emergency" model="ultrasound.category">
+            <field name="name">Emergency Ultrasound Services</field>
+        </record>
+        <record id="ultra_cat_advanced" model="ultrasound.category">
+            <field name="name">Advanced Ultrasound Services</field>
+        </record>
+        <record id="ultra_cat_follow" model="ultrasound.category">
+            <field name="name">Follow-up and Monitoring Services</field>
+        </record>
+
+        <!--   Ultra Sound Services     -->
+        <record id="ultrasound_service_abdo" model="ultrasound.service">
+            <field name="name">Abdominal Ultrasound</field>
+            <field name="description">Imaging of organs such as the liver, gallbladder, kidneys, spleen, and pancreas</field>
+            <field name="service_category" ref="ultra_cat_general"/>
+        </record>
+        <record id="ultrasound_service_pelv" model="ultrasound.service">
+            <field name="name">Pelvic Ultrasound</field>
+            <field name="description">Evaluation of female reproductive organs (uterus, ovaries) and bladder</field>
+            <field name="service_category" ref="ultra_cat_general"/>
+        </record>
+        <record id="ultrasound_service_vaginal" model="ultrasound.service">
+            <field name="name">Transvaginal Ultrasound</field>
+            <field name="description">Detailed imaging of the female reproductive system using a probe inserted into the vagina</field>
+            <field name="service_category" ref="ultra_cat_general"/>
+        </record>
+        <record id="ultrasound_service_rectal" model="ultrasound.service">
+            <field name="name">Transrectal Ultrasound</field>
+            <field name="description">Imaging of the prostate and surrounding structures</field>
+            <field name="service_category" ref="ultra_cat_general"/>
+        </record>
+        <record id="ultrasound_service_earlyp" model="ultrasound.service">
+            <field name="name">Early Pregnancy Ultrasound</field>
+            <field name="description">Confirming pregnancy and determining viability</field>
+            <field name="service_category" ref="ultra_cat_obstet"/>
+        </record>
+        <record id="ultrasound_service_nuchal" model="ultrasound.service">
+            <field name="name">Nuchal Translucency Screening</field>
+            <field name="description">Assessing the risk of chromosomal abnormalities in the first trimester</field>
+            <field name="service_category" ref="ultra_cat_obstet"/>
+        </record>
+        <record id="ultrasound_service_anatomy" model="ultrasound.service">
+            <field name="name">Anatomy Scan (20-week scan)</field>
+            <field name="description">Detailed evaluation of fetal anatomy and growth</field>
+            <field name="service_category" ref="ultra_cat_obstet"/>
+        </record>
+        <record id="ultrasound_service_growth" model="ultrasound.service">
+            <field name="name">Growth Scans</field>
+            <field name="description">Monitoring fetal growth and development in later trimesters</field>
+            <field name="service_category" ref="ultra_cat_obstet"/>
+        </record>
+        <record id="ultrasound_service_dopp" model="ultrasound.service">
+            <field name="name">Doppler Ultrasound</field>
+            <field name="description">Evaluating blood flow in the fetus and placenta</field>
+            <field name="service_category" ref="ultra_cat_obstet"/>
+        </record>
+        <record id="ultrasound_service_cardiac" model="ultrasound.service">
+            <field name="name">Cardiac Ultrasound (Echocardiogram)</field>
+            <field name="description">Imaging of the heart to assess structure and function</field>
+            <field name="service_category" ref="ultra_cat_special"/>
+        </record>
+        <record id="ultrasound_service_muscu" model="ultrasound.service">
+            <field name="name">Musculoskeletal Ultrasound</field>
+            <field name="description">Imaging of muscles, tendons, and joints for injuries or conditions</field>
+            <field name="service_category" ref="ultra_cat_special"/>
+        </record>
+        <record id="ultrasound_service_vascular" model="ultrasound.service">
+            <field name="name">Vascular Ultrasound</field>
+            <field name="description">Evaluating blood vessels and blood flow (e.g., carotid, venous, and arterial studies).</field>
+            <field name="service_category" ref="ultra_cat_special"/>
+        </record>
+        <record id="ultrasound_service_thyroid" model="ultrasound.service">
+            <field name="name">Thyroid Ultrasound</field>
+            <field name="description">Assessment of thyroid gland abnormalities or nodules</field>
+            <field name="service_category" ref="ultra_cat_special"/>
+        </record>
+        <record id="ultrasound_service_biopsy" model="ultrasound.service">
+            <field name="name">Ultrasound-Guided Biopsy</field>
+            <field name="description">Performing biopsies of abnormal masses or lesions using ultrasound guidance</field>
+            <field name="service_category" ref="ultra_cat_intervention"/>
+        </record>
+        <record id="ultrasound_service_drainage" model="ultrasound.service">
+            <field name="name">Drainage Procedures</field>
+            <field name="description">Guiding the drainage of abscesses or fluid collections</field>
+            <field name="service_category" ref="ultra_cat_intervention"/>
+        </record>
+        <record id="ultrasound_service_cyst" model="ultrasound.service">
+            <field name="name">Cyst Aspiration</field>
+            <field name="description">Removing fluid from cysts for diagnostic or therapeutic purposes</field>
+            <field name="service_category" ref="ultra_cat_intervention"/>
+        </record>
+        <record id="ultrasound_service_pedabdo" model="ultrasound.service">
+            <field name="name">Pediatric Abdominal Ultrasound</field>
+            <field name="description">Imaging of abdominal organs in children</field>
+            <field name="service_category" ref="ultra_cat_pediatric"/>
+        </record>
+        <record id="ultrasound_service_cranial" model="ultrasound.service">
+            <field name="name">Pediatric Cranial Ultrasound</field>
+            <field name="description">Assessing brain structures in infants, typically through fontanelles</field>
+            <field name="service_category" ref="ultra_cat_pediatric"/>
+        </record>
+        <record id="ultrasound_service_hip" model="ultrasound.service">
+            <field name="name">Hip Ultrasound</field>
+            <field name="description">Screening for developmental dysplasia of the hip in infants</field>
+            <field name="service_category" ref="ultra_cat_pediatric"/>
+        </record>
+        <record id="ultrasound_service_sono" model="ultrasound.service">
+            <field name="name">Focused Assessment with Sonography for Trauma (FAST)</field>
+            <field name="description">Rapid evaluation for internal bleeding in trauma cases</field>
+            <field name="service_category" ref="ultra_cat_emergency"/>
+        </record>
+        <record id="ultrasound_service_ectopic" model="ultrasound.service">
+            <field name="name">Ectopic Pregnancy Evaluation</field>
+            <field name="description">Immediate assessment in cases of suspected ectopic pregnancy</field>
+            <field name="service_category" ref="ultra_cat_emergency"/>
+        </record>
+        <record id="ultrasound_service_abdompain" model="ultrasound.service">
+            <field name="name">Assessing Abdominal Pain</field>
+            <field name="description">Quick evaluation of acute abdominal conditions</field>
+            <field name="service_category" ref="ultra_cat_emergency"/>
+        </record>
+        <record id="ultrasound_service_3d4d" model="ultrasound.service">
+            <field name="name">3D and 4D Ultrasound</field>
+            <field name="description">Advanced imaging techniques for enhanced visualization of structures (commonly used in obstetrics).</field>
+            <field name="service_category" ref="ultra_cat_advanced"/>
+        </record>
+        <record id="ultrasound_service_contrast" model="ultrasound.service">
+            <field name="name">Contrast-Enhanced Ultrasound</field>
+            <field name="description">Utilizing contrast agents for improved imaging of certain conditions</field>
+            <field name="service_category" ref="ultra_cat_advanced"/>
+        </record>
+        <record id="ultrasound_service_post" model="ultrasound.service">
+            <field name="name">Post-operative Ultrasound</field>
+            <field name="description">Assessing surgical sites for complications</field>
+            <field name="service_category" ref="ultra_cat_follow"/>
+        </record>
+        <record id="ultrasound_service_monitor" model="ultrasound.service">
+            <field name="name">Monitoring Chronic Conditions</field>
+            <field name="description">Regular imaging for conditions like liver disease or tumors</field>
+            <field name="service_category" ref="ultra_cat_follow"/>
+        </record>
+    </data>
+</odoo>

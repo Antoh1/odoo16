@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<!-- Tree view -->
+	<record id="dental_service_tree_view" model="ir.ui.view">
+		<field name="name">dental.service.tree.view</field>
+		<field name="model">dental.service</field>
+		<field name="priority">5</field>
+		<field name="arch" type="xml">
+			<tree string="Main Dental Service List">
+				<field name="name"/>
+				<field name="description"/>
+			</tree>
+		</field>
+	</record>
+
+	<!-- Form view -->
+	<record id="dental_service_form_view" model="ir.ui.view">
+		<field name="name">dental.service.form.view</field>
+		<field name="model">dental.service</field>
+		<field name="arch" type="xml">
+			<form string="Dental Service Category">
+				<sheet>
+					<group>
+						<group>
+							<field name="name" required="1"/>
+						</group>
+					</group>
+					<group>
+						<field name="description"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<!-- Tree view -->
+	<record id="dental_sub_service_tree_view" model="ir.ui.view">
+		<field name="name">dental.sub.service.tree.view</field>
+		<field name="model">dental.sub.service</field>
+		<field name="priority">5</field>
+		<field name="arch" type="xml">
+			<tree string="Dental Service List">
+				<field name="name"/>
+				<field name="description"/>
+				<field name="service_category"/>
+				<field name="amount"/>
+				<field name="price"/>
+			</tree>
+		</field>
+	</record>
+
+	<!-- Form view -->
+	<record id="dental_sub_service_form_view" model="ir.ui.view">
+		<field name="name">dental.sub.service.form.view</field>
+		<field name="model">dental.sub.service</field>
+		<field name="arch" type="xml">
+			<form string="Dental Services">
+				<sheet>
+					<group>
+						<group>
+							<field name="name" required="1"/>
+							<field name="service_category"/>
+							<field name="amount"/>
+							<field name="price"/>
+						</group>
+					</group>
+					<group>
+						<field name="description"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<!-- Search View -->
+	<record id="dental_service_search_view" model="ir.ui.view">
+		<field name="name">Dental Service Categories</field>
+		<field name="model">dental.service</field>
+		<field name="type">search</field>
+		<field name="priority" eval="8" />
+		<field name="arch" type="xml">
+			<search string="Search Categories">
+				<separator orientation="vertical" />
+				<field name="name" />
+				<field name="description"/>
+				<newline />
+			</search>
+		</field>
+	</record>
+
+	<record model="ir.actions.act_window" id="action_dental_category">
+		<field name="name">Dental Categories</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">dental.service</field>
+		<field name="binding_view_types">form</field>
+		<field name="view_mode">tree,form</field>
+		<field name="search_view_id" ref="dental_service_search_view" />
+		<field name="domain">[]</field>
+		<field name="context">{}</field>
+		<field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a Dental Category
+            </p>
+        </field>
+	</record>
+
+	<record model="ir.actions.act_window" id="action_dental_service">
+		<field name="name">Dental Services</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">dental.sub.service</field>
+		<field name="binding_view_types">form</field>
+		<field name="view_mode">tree,form</field>
+		<field name="search_view_id" ref="dental_service_search_view" />
+		<field name="domain">[]</field>
+		<field name="context">{}</field>
+		<field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a Dental Service
+            </p>
+        </field>
+	</record>
+
+	<menuitem id="menu_dental_main"
+			  name="Dental Services"
+			  sequence="8" parent="hospital_configuration_root"/>
+	<menuitem id="menu_dental_category"
+			  name="Dental Service Categories"
+			  action="action_dental_category"
+			  sequence="1" parent="menu_dental_main"/>
+	<menuitem id="menu_dental_service"
+			  name="Dental Services"
+			  action="action_dental_service"
+			  sequence="2" parent="menu_dental_main"/>
+
+</odoo>
